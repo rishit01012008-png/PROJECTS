@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Grind | Local Boutique Coffee Shop</title>
+    
+    <!-- Google Fonts for elegant typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FAF8F5',
+                            100: '#F4EFE6',
+                            200: '#E6DCC5',
+                        },
+                        chocolate: {
+                            800: '#3E2723',
+                            900: '#2A1A17',
+                        },
+                        earth: {
+                            400: '#A1887F',
+                            500: '#8D6E63',
+                            600: '#6D4C41',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for enhancements not easily done with Tailwind classes alone */
+        .glass-nav {
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(42, 26, 23, 0.6), rgba(42, 26, 23, 0.7)), url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+</head>
+<body class="font-sans bg-cream-50 text-chocolate-900 antialiased selection:bg-earth-500 selection:text-cream-50">
+
+    <nav class="fixed w-full z-50 glass-nav border-b border-cream-200 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="font-serif text-2xl font-bold tracking-tight text-chocolate-800">
+                        <i class="fa-solid fa-mug-hot text-earth-500 mr-2"></i>The Daily Grind
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-chocolate-800 hover:text-earth-600 transition-colors font-medium">Home</a>
+                    <a href="#about" class="text-chocolate-800 hover:text-earth-600 transition-colors font-medium">About Us</a>
+                    <a href="#menu" class="text-chocolate-800 hover:text-earth-600 transition-colors font-medium">Menu & Services</a>
+                    <a href="#menu" class="bg-earth-600 text-cream-50 px-5 py-2.5 rounded-full hover:bg-chocolate-800 transition-colors duration-300 font-medium text-sm shadow-md hover:shadow-lg">
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-chocolate-800 hover:text-earth-600 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-cream-50 border-t border-cream-200 shadow-xl absolute w-full left-0">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#home" class="mobile-link block px-3 py-3 text-base font-medium text-chocolate-800 hover:bg-cream-100 rounded-md">Home</a>
+                <a href="#about" class="mobile-link block px-3 py-3 text-base font-medium text-chocolate-800 hover:bg-cream-100 rounded-md">About Us</a>
+                <a href="#menu" class="mobile-link block px-3 py-3 text-base font-medium text-chocolate-800 hover:bg-cream-100 rounded-md">Menu & Services</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="block text-cream-200 font-serif italic mb-4 text-lg md:text-xl tracking-wider">Awaken Your Senses</span>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-cream-50 mb-6 leading-tight text-balance">
+                Handcrafted Coffee, <br> Heartfelt Community.
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-cream-100 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Step into a world of rich aromas and warm conversations. We brew moments of comfort right in your neighborhood.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-chocolate-900 bg-cream-50 hover:bg-cream-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    View Our Menu
+                </a>
+                <a href="#about" class="inline-flex justify-center items-center px-8 py-4 border-2 border-cream-50 text-base font-medium rounded-full text-cream-50 hover:bg-cream-50 hover:text-chocolate-900 transition-all duration-300 transform hover:-translate-y-1">
+                    Our Story
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Image side -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute inset-0 bg-earth-500 rounded-2xl transform translate-x-4 translate-y-4 opacity-50"></div>
+                    <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Barista preparing organic coffee" 
+                         class="relative rounded-2xl shadow-xl w-full h-[500px] object-cover"
+                         onerror="this.src='https://placehold.co/800x600/8D6E63/FAF8F5?text=Artisan+Coffee'">
+                </div>
+                
+                <!-- Text side -->
+                <div class="w-full lg:w-1/2">
+                    <div class="inline-flex items-center space-x-2 text-earth-600 font-semibold uppercase tracking-widest text-sm mb-4">
+                        <span class="w-8 h-[2px] bg-earth-500"></span>
+                        <span>About Us</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-chocolate-800 mb-6 leading-tight">
+                        Rooted in Quality, <br> Grown in Community.
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        At The Daily Grind, we believe a cup of coffee is more than just a morning routine—it's a ritual, a pause, and a moment to connect. Founded in 2018, our boutique coffee shop was born from a passion for exceptional flavor and a desire to create a welcoming haven for our neighborhood.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        Our commitment is unwavering: we source only the finest <strong class="text-chocolate-900 font-semibold">100% organic, fair-trade beans</strong> from local roasters who share our dedication to sustainability. Paired with our rustic, warm interior, we've designed a space where ideas flourish, friendships deepen, and every sip feels like coming home.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8 border-t border-cream-200 pt-8">
+                        <div>
+                            <h4 class="text-4xl font-serif text-earth-600 mb-2">100%</h4>
+                            <p class="font-medium text-chocolate-800">Organic Beans</p>
+                        </div>
+                        <div>
+                            <h4 class="text-4xl font-serif text-earth-600 mb-2"><i class="fa-solid fa-users"></i></h4>
+                            <p class="font-medium text-chocolate-800">Community First</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-24 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center space-x-2 text-earth-600 font-semibold uppercase tracking-widest text-sm mb-4 justify-center">
+                    <span class="w-8 h-[2px] bg-earth-500"></span>
+                    <span>Our Offerings</span>
+                    <span class="w-8 h-[2px] bg-earth-500"></span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-chocolate-800 mb-6">
+                    Crafted for Your Craving
+                </h2>
+                <p class="text-lg text-gray-700">
+                    From our signature espresso pulls to freshly baked artisanal treats, discover our thoughtfully curated menu designed to delight.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Category 1: Specialty Espresso -->
+                <div class="bg-cream-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-cream-200 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Latte Art" 
+                             class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/600x400/8D6E63/FAF8F5?text=Espresso'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-chocolate-900/60 to-transparent flex items-end">
+                            <h3 class="text-2xl font-serif text-cream-50 p-6 font-bold">Specialty Espresso</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <ul class="space-y-4 flex-grow">
+                            <li class="flex justify-between items-baseline border-b border-cream-200 pb-2">
+                                <span class="font-medium text-chocolate-800">Classic Latte</span>
+                                <span class="text-earth-600 font-serif">$4.50</span>
+                            </li>
+                            <li class="flex justify-between items-baseline border-b border-cream-200 pb-2">
+                                <span class="font-medium text-chocolate-800">Oat Milk Flat White</span>
+                                <span class="text-earth-600 font-serif">$5.00</span>
+                            </li>
+                            <li class="flex justify-between items-baseline border-b border-cream-200 pb-2">
+                                <span class="font-medium text-chocolate-800">Honey Lavender Mocha</span>
+                                <span class="text-earth-600 font-serif">$5.50</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <span class="font-medium text-chocolate-800">Cold Brew Reserve</span>
+                                <span class="text-earth-600 font-serif">$4.75</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Category 2: Artisanal Pastries -->
+                <div class="bg-cream-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-cream-200 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Fresh Pastries" 
+                             class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/600x400/8D6E63/FAF8F5?text=Pastries'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-chocolate-900/60 to-transparent flex items-end">
+                            <h3 class="text-2xl font-serif text-cream-50 p-6 font-bold">Artisanal Pastries</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <ul class="space-y-4 flex-grow">
+                            <li class="flex justify-between items-baseline border-b border-cream-200 pb-2">
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-chocolate-800">Butter Croissant</span>
+                                    <span class="text-xs text-gray-500">Flaky, baked daily</span>
+                                </div>
+                                <span class="text-earth-600 font-serif">$3.75</span>
+                            </li>
+                            <li class="flex justify-between items-baseline border-b border-cream-200 pb-2">
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-chocolate-800">Blueberry Scone</span>
+                                    <span class="text-xs text-gray-500">With lemon glaze</span>
+                                </div>
+                                <span class="text-earth-600 font-serif">$4.00</span>
+                            </li>
+                            <li class="flex justify-between items-baseline border-b border-cream-200 pb-2">
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-chocolate-800">Vegan Banana Bread</span>
+                                    <span class="text-xs text-gray-500">Gluten-free option available</span>
+                                </div>
+                                <span class="text-earth-600 font-serif">$4.25</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Category 3: Catering & Events -->
+                <div class="bg-chocolate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col text-cream-50">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Catering Setup" 
+                             class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 opacity-80"
+                             onerror="this.src='https://placehold.co/600x400/3E2723/FAF8F5?text=Catering'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-chocolate-900 to-transparent flex items-end">
+                            <h3 class="text-2xl font-serif text-cream-50 p-6 font-bold">Small Event Catering</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col bg-chocolate-900">
+                        <p class="text-sm text-cream-100 mb-4 opacity-90 leading-relaxed">
+                            Elevate your next office meeting or intimate gathering with our thoughtfully prepared catering options.
+                        </p>
+                        <ul class="space-y-4 flex-grow text-sm mb-6">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-earth-400 mt-1 mr-3"></i>
+                                <span><strong>Coffee Travelers:</strong> 96oz of freshly brewed drip coffee (serves 10-12). Includes cups, lids, and condiments.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-earth-400 mt-1 mr-3"></i>
+                                <span><strong>Pastry Platters:</strong> Assorted miniature muffins, croissants, and scones.</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="mt-auto block w-full text-center bg-earth-500 text-cream-50 py-3 rounded-lg hover:bg-earth-400 transition-colors duration-300 font-medium">
+                            Request a Quote
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-chocolate-900 text-cream-100 pt-16 pb-8 border-t-[8px] border-earth-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                
+                <!-- Brand Info -->
+                <div>
+                    <a href="#home" class="font-serif text-2xl font-bold tracking-tight text-cream-50 inline-block mb-4">
+                        <i class="fa-solid fa-mug-hot text-earth-500 mr-2"></i>The Daily Grind
+                    </a>
+                    <p class="text-sm opacity-80 leading-relaxed mb-6">
+                        Your neighborhood boutique coffee shop. We are dedicated to providing ethically sourced, exceptionally crafted coffee and baked goods in a warm, welcoming environment.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-chocolate-800 flex items-center justify-center hover:bg-earth-500 hover:text-cream-50 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-chocolate-800 flex items-center justify-center hover:bg-earth-500 hover:text-cream-50 transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-chocolate-800 flex items-center justify-center hover:bg-earth-500 hover:text-cream-50 transition-colors">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hours & Location -->
+                <div>
+                    <h4 class="font-serif text-xl font-bold text-cream-50 mb-6">Visit Us</h4>
+                    <ul class="space-y-3 text-sm opacity-90">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot mt-1 mr-3 text-earth-500"></i>
+                            <span>123 Espresso Lane<br>Brewster, NY 10509</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone mr-3 text-earth-500"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope mr-3 text-earth-500"></i>
+                            <span>hello@thedailygrind.local</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hours -->
+                <div>
+                    <h4 class="font-serif text-xl font-bold text-cream-50 mb-6">Opening Hours</h4>
+                    <ul class="space-y-2 text-sm opacity-90">
+                        <li class="flex justify-between border-b border-chocolate-800 pb-2">
+                            <span>Mon - Fri</span>
+                            <span>6:30 AM - 6:00 PM</span>
+                        </li>
+                        <li class="flex justify-between border-b border-chocolate-800 pb-2">
+                            <span>Saturday</span>
+                            <span>7:30 AM - 7:00 PM</span>
+                        </li>
+                        <li class="flex justify-between border-b border-chocolate-800 pb-2">
+                            <span>Sunday</span>
+                            <span>8:00 AM - 4:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-chocolate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs opacity-60">
+                <p>&copy; <span id="year"></span> The Daily Grind. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-cream-50">Privacy Policy</a>
+                    <a href="#" class="hover:text-cream-50">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Mobile menu toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const links = document.querySelectorAll('.mobile-link');
+            const icon = btn.querySelector('i');
+
+            function toggleMenu() {
+                menu.classList.toggle('hidden');
+                if(menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            }
+
+            btn.addEventListener('click', toggleMenu);
+
+            // Close mobile menu on link click
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!menu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // Navbar styling on scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-md');
+                    navbar.classList.replace('py-4', 'py-0'); // Using tailwind classes to adjust padding if they existed on parent
+                } else {
+                    navbar.classList.remove('shadow-md');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
