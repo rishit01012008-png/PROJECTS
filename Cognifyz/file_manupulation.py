@@ -1,4 +1,6 @@
+import time
 def count_words_in_file(filename):
+    start_time = time.time()
     try:
         with open(filename , 'r') as file:
             text = file.read().lower()
@@ -15,4 +17,6 @@ def count_words_in_file(filename):
 
     except FileNotFoundError:
         print("The File does not exists!!!")
+    end_time = time.time()
+    print(f"Time taken to count words: {end_time - start_time:.6f} seconds")
 count_words_in_file('sample.txt')
